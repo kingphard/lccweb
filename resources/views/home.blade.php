@@ -19,7 +19,7 @@
     </div>
     <div class="panel-group">
         <div class="panel panel-default">
-            <div class="panel-heading">Add Images </div>
+            <div class="panel-heading">Add Images</div>
             <div class="panel-body">
                {!! Form::open(['url'=> '/home','method'=>'POST', 'files' => true]) !!}
                     <div class="form-group">
