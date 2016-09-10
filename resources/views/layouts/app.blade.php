@@ -8,15 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Admin</title>
-
-
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ URL::asset('css/app.css')}}" rel="stylesheet">
-    <link href="{{ URL::asset('css/jasny-bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{ URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{ URL::asset('css/mydes.css')}}" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
+
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -39,7 +35,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    View Site
+                    {{ config('app.name', 'Laravel') }}
                 </a>
             </div>
 
@@ -54,7 +50,7 @@
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Add Admin</a></li>
+                        <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -73,16 +69,6 @@
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
-                                <li>
-                                    <a href="{{ url('/video_upload')}}">
-                                        Upload Video 
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('/audio_upload')}}">
-                                        Upload Audio/Sermon 
-                                    </a>
-                                </li>
                             </ul>
                         </li>
                     @endif
@@ -94,11 +80,6 @@
     @yield('content')
 
     <!-- Scripts -->
-    <script src="{{ URL::asset('js/app/app.js')}}"></script>
-    <script src="{{ URL::asset('js/jquery.js')}}"></script>
-    <script src="{{ URL::asset('js/jasny-bootstrap.min.js')}}"></script>
-    <script src="{{ URL::asset('js/design.js')}}"></script>
-    <script src="{{ URL::asset('js/bootstrap.js')}}"></script>
-    <script src="{{ URL::asset('js/jquery-2.1.1.js')}}"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

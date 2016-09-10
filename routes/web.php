@@ -43,3 +43,7 @@ Route::post('/audio_upload', 'AudioController@store');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
